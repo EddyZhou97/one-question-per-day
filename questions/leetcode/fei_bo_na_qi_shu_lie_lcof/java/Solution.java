@@ -1,3 +1,11 @@
+package fei_bo_na_qi_shu_lie_lcof.java;
+
+/**
+ * 斐波那契数列
+ *
+ * @author ZhouYi
+ * 2021/3/29 12:01 上午
+ */
 class Solution {
     public int fib(int n) {
         int pre = 0;
@@ -14,5 +22,11 @@ class Solution {
             cur = tmp < 1000000007 ? tmp : tmp % 1000000007;
         }
         return cur;
+    }
+}
+
+class Main{
+    public static void main(String[] args){
+        System.out.println(new Solution().fib(5));
     }
 }
