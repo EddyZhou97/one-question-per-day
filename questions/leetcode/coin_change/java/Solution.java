@@ -28,6 +28,7 @@ class Solution {
     }
 
     public static void main(String[] args) {
+        // 测试输出
         System.out.println(new Solution().coinChange(new int[]{1, 2, 5}, 5));
     }
 }
