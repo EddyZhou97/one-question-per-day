@@ -1,4 +1,4 @@
-package permutations.java;
+package solution_0046.java;
 
 import java.util.LinkedList;
 import java.util.List;

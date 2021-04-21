@@ -1,4 +1,4 @@
-package coin_change.java;
+package solution_0322.java;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package linked_list_cycle_ii.java;
+package solution_0142.java;
 
 import java.util.List;
 import java.util.ArrayList;
