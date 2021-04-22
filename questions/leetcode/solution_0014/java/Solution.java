@@ -1,4 +1,4 @@
-package longest_common_prefix.java;
+package solution_0014.java;
 
 public class Solution {
 

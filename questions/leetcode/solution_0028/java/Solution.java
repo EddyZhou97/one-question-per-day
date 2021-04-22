@@ -1,10 +1,4 @@
-package implement_strstr.java;
-
-import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+package solution_0028.java;
 
 class Solution {
 
