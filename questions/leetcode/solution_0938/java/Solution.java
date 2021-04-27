@@ -41,11 +41,11 @@ class Solution {
             sum += node.val;
         }
 
-        if (node.left != null) {
+        if (node.left != null && node.val > low) {
             dfs(node.left, low, high);
         }
 
-        if (node.right != null) {
+        if (node.right != null && node.val < high) {
             dfs(node.right, low, high);
         }
     }
