@@ -31,6 +31,23 @@ public class ShowMeBug {
         }
     }
 
+    /**
+     * AA
+     * BB
+     * FF
+     * GG
+     * CC
+     * DD
+     * HH
+     * EE
+     * II
+     * JJ
+     * KK
+     * LL
+     * MM
+     * NN
+     * OO
+     */
     public static void main(String[] args) {
         List<Node> nodeList = Arrays.asList(
                 new Node(1, 0, "AA"),
@@ -80,20 +97,8 @@ public class ShowMeBug {
 
     public static String getBlank(int count) {
         if (count > 0) {
-            StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < count; i++) {
-                sb.append(" ");
-            }
-            return sb.toString();
+            return " ".repeat(count);
         }
         return "";
     }
 }
-
-/*
- * AA
- *   BB
- *   CC
- *     DD
- *
- * */
