@@ -89,12 +89,12 @@ public class Demo {
             }
         }
 
-        if(arr1Index == arr1.length){
-            while(arr2Index < arr2.length){
+        if (arr1Index == arr1.length) {
+            while (arr2Index < arr2.length) {
                 mergedArray.add(arr2[arr2Index++]);
             }
         } else {
-            while(arr1Index < arr1.length){
+            while (arr1Index < arr1.length) {
                 mergedArray.add(arr1[arr1Index++]);
             }
         }

@@ -1,6 +1,6 @@
 package demo.java;
 
-import java.util.*;
+import java.util.ArrayList;
 
 
 class TreeNode {
@@ -25,41 +25,40 @@ public class Solution {
     }
 
     /**
-     *
      * @param root TreeNode类
      * @param sum int整型
-     * @return int整型ArrayList<ArrayList<>>
+     * @return int整型ArrayList<ArrayList <>>
      */
 
     private ArrayList<ArrayList<Integer>> res;
 
-    public ArrayList<ArrayList<Integer>> pathSum (TreeNode root, int sum) {
+    public ArrayList<ArrayList<Integer>> pathSum(TreeNode root, int sum) {
         // write code here
         res = new ArrayList();
-        if(root == null){
+        if (root == null) {
             return res;
         }
-        trace(new ArrayList(),root,sum);
+        trace(new ArrayList(), root, sum);
         return res;
     }
 
-    public void trace(ArrayList<Integer> path, TreeNode node, int sum){
+    public void trace(ArrayList<Integer> path, TreeNode node, int sum) {
         path.add(node.val);
-        if(node.left == null && node.right == null){
+        if (node.left == null && node.right == null) {
             int tmpSum = 0;
-            for(Integer val : path){
+            for (Integer val : path) {
                 tmpSum += val;
             }
-            if(tmpSum == sum){
+            if (tmpSum == sum) {
                 res.add(path);
             }
             return;
         }
 
-        if(node.right != null){
-            trace(new ArrayList<Integer>(path),node.right,sum);
+        if (node.right != null) {
+            trace(new ArrayList<Integer>(path), node.right, sum);
         }
-        if(node.left != null){
+        if (node.left != null) {
             trace(new ArrayList<Integer>(path), node.left, sum);
         }
 

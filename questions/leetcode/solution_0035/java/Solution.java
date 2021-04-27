@@ -13,19 +13,19 @@ public class Solution {
         int startIndex = 0;
         int endIndex = nums.length - 1;
 
-        while(startIndex <= endIndex){
+        while (startIndex <= endIndex) {
             int mid = (endIndex - startIndex) / 2 + startIndex;
-            if(nums[mid] > target){
-                if(mid == endIndex){
+            if (nums[mid] > target) {
+                if (mid == endIndex) {
                     return mid;
                 }
-                endIndex = mid -1;
-            }else if(nums[mid] < target){
-                if(mid == endIndex){
+                endIndex = mid - 1;
+            } else if (nums[mid] < target) {
+                if (mid == endIndex) {
                     return mid + 1;
                 }
                 startIndex = mid + 1;
-            }else {
+            } else {
                 return mid;
             }
 
@@ -56,33 +56,33 @@ public class Solution {
     }
 
     private static void case1() {
-        int solution = new Solution().searchInsert(new int[]{1,3,5,6}, 5);
+        int solution = new Solution().searchInsert(new int[]{1, 3, 5, 6}, 5);
         System.out.println(solution);
-        if(solution == 2){
+        if (solution == 2) {
             System.out.println("true");
         }
     }
 
     private static void case2() {
-        int solution = new Solution().searchInsert(new int[]{1,3,5,6}, 2);
+        int solution = new Solution().searchInsert(new int[]{1, 3, 5, 6}, 2);
         System.out.println(solution);
-        if(solution == 1){
+        if (solution == 1) {
             System.out.println("true");
         }
     }
 
     private static void case3() {
-        int solution = new Solution().searchInsert(new int[]{1,3,5,6}, 7);
+        int solution = new Solution().searchInsert(new int[]{1, 3, 5, 6}, 7);
         System.out.println(solution);
-        if(solution == 4){
+        if (solution == 4) {
             System.out.println("true");
         }
     }
 
     private static void case4() {
-        int solution = new Solution().searchInsert(new int[]{1,3,5,6}, 0);
+        int solution = new Solution().searchInsert(new int[]{1, 3, 5, 6}, 0);
         System.out.println(solution);
-        if(solution == 0){
+        if (solution == 0) {
             System.out.println("true");
         }
     }
@@ -90,39 +90,39 @@ public class Solution {
     private static void case5() {
         int solution = new Solution().searchInsert(new int[]{1}, 0);
         System.out.println(solution);
-        if(solution == 0){
+        if (solution == 0) {
             System.out.println("true");
         }
     }
 
     private static void case6() {
-        int solution = new Solution().searchInsert(new int[]{1,3}, 0);
+        int solution = new Solution().searchInsert(new int[]{1, 3}, 0);
         System.out.println(solution);
-        if(solution == 0){
+        if (solution == 0) {
             System.out.println("true");
         }
     }
 
     private static void case7() {
-        int solution = new Solution().searchInsert(new int[]{1,3}, 3);
+        int solution = new Solution().searchInsert(new int[]{1, 3}, 3);
         System.out.println(solution);
-        if(solution == 1){
+        if (solution == 1) {
             System.out.println("true");
         }
     }
 
     private static void case8() {
-        int solution = new Solution().searchInsert(new int[]{1,3}, 4);
+        int solution = new Solution().searchInsert(new int[]{1, 3}, 4);
         System.out.println(solution);
-        if(solution == 2){
+        if (solution == 2) {
             System.out.println("true");
         }
     }
 
     private static void case9() {
-        int solution = new Solution().searchInsert(new int[]{3,5,7,9,10}, 8);
+        int solution = new Solution().searchInsert(new int[]{3, 5, 7, 9, 10}, 8);
         System.out.println(solution);
-        if(solution == 3){
+        if (solution == 3) {
             System.out.println("true");
         }
     }

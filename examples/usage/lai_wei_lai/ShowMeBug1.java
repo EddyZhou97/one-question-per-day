@@ -1,7 +1,5 @@
 package lai_wei_lai;
 
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
 interface IA {

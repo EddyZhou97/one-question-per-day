@@ -1,6 +1,6 @@
-# [28. 实现 strStr()](https://leetcode-cn.com/problems/implement-strstr/) 
+# [28. 实现 strStr()](https://leetcode-cn.com/problems/implement-strstr/)
 
-- 使用kms算法实现 
+- 使用kms算法实现
 
 - Amazing kms 不如直接 indexOf。。。
 

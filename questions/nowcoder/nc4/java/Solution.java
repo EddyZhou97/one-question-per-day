@@ -3,20 +3,20 @@ package nc4.java;
 /**
  * Definition for singly-linked list.
  * class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode(int x) {
- *         val = x;
- *         next = null;
- *     }
+ * int val;
+ * ListNode next;
+ * ListNode(int x) {
+ * val = x;
+ * next = null;
+ * }
  * }
  */
 class Solution {
 
     public boolean hasCycle(ListNode head) {
         ListNode flagNode = new ListNode(0);
-        while(head != null && head.next != null ){
-            if(head.next == flagNode){
+        while (head != null && head.next != null) {
+            if (head.next == flagNode) {
                 return true;
             }
             ListNode tmpNode = head.next;
@@ -57,6 +57,7 @@ class Solution {
 class ListNode {
     int val;
     ListNode next;
+
     ListNode(int x) {
         val = x;
         next = null;

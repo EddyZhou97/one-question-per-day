@@ -13,7 +13,7 @@ public class Demo {
     public static void main(String[] args) {
 
         LinkedList<Integer> list = new LinkedList<>();
-        list.add(0,1);
+        list.add(0, 1);
         System.out.println(list.size());
 
     }

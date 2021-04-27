@@ -53,7 +53,7 @@ public class Solution {
     }
 
     private static void case5() {
-        System.out.println(new Solution().longestCommonPrefix(new String[]{"cir","car"}));
+        System.out.println(new Solution().longestCommonPrefix(new String[]{"cir", "car"}));
     }
 
 

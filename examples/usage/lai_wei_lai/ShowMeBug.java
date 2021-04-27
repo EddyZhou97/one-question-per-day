@@ -5,13 +5,13 @@ import java.util.*;
 // 必须定义 `ShowMeBug` 入口类和 `public static void main(String[] args)` 入口方法
 public class ShowMeBug {
 
-    static class TreeNode{
+    static class TreeNode {
         int preBlankCount;
         Node current;
         TreeNode parent;
         List<TreeNode> children;
 
-        public TreeNode(int preBlankCount, Node current, TreeNode parent){
+        public TreeNode(int preBlankCount, Node current, TreeNode parent) {
             this.preBlankCount = preBlankCount;
             this.current = current;
             this.parent = parent;
@@ -57,31 +57,31 @@ public class ShowMeBug {
         Node parentNode = new Node(0, 0, "");
         TreeNode treeNode = new TreeNode(-2, parentNode, null);
         treeNodeMap.put(0, treeNode);
-        for(Node node : nodeList){
+        for (Node node : nodeList) {
             final TreeNode parentTreeNode = treeNodeMap.get(node.parentId);
             TreeNode curTreeNode = new TreeNode(parentTreeNode.preBlankCount + 2, node, parentTreeNode);
             parentTreeNode.children.add(curTreeNode);
             treeNodeMap.put(node.id, curTreeNode);
         }
 
-        for(TreeNode tmpTreeNode : treeNode.children){
+        for (TreeNode tmpTreeNode : treeNode.children) {
             traceTreeNode(tmpTreeNode);
         }
     }
 
-    public static void traceTreeNode(TreeNode treeNode){
+    public static void traceTreeNode(TreeNode treeNode) {
         System.out.println(getBlank(treeNode.preBlankCount) + treeNode.current.name);
-        if(treeNode.children.size() > 0){
-            for(TreeNode tmpTreeNode : treeNode.children){
+        if (treeNode.children.size() > 0) {
+            for (TreeNode tmpTreeNode : treeNode.children) {
                 traceTreeNode(tmpTreeNode);
             }
         }
     }
 
-    public static String getBlank(int count){
-        if(count > 0){
+    public static String getBlank(int count) {
+        if (count > 0) {
             StringBuilder sb = new StringBuilder();
-            for(int i = 0; i<count;i++){
+            for (int i = 0; i < count; i++) {
                 sb.append(" ");
             }
             return sb.toString();

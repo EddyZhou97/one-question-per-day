@@ -15,22 +15,22 @@ public class Solution {
         return res;
     }
 
-    public int binarySearch(int[] nums, int target, boolean isLeft){
+    public int binarySearch(int[] nums, int target, boolean isLeft) {
         int start = 0;
         int end = nums.length - 1;
         int res = -1;
-        while(start <= end){
+        while (start <= end) {
             // 向右移动一位，相当于除2，使用位运算加快速度
             int mid = start + ((end - start) >> 1);
-            if(nums[mid] < target){
+            if (nums[mid] < target) {
                 start = mid + 1;
-            }else if(nums[mid] > target){
-                end = mid -1;
-            }else {
+            } else if (nums[mid] > target) {
+                end = mid - 1;
+            } else {
                 res = mid;
-                if(isLeft){
+                if (isLeft) {
                     end = mid - 1;
-                }else {
+                } else {
                     start = mid + 1;
                 }
             }

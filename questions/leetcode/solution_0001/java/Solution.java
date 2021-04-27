@@ -24,8 +24,8 @@ class Solution {
     }
 }
 
-class Main{
-    public static void main(String[] main){
-        System.out.println(new Solution().twoSum(new int[]{2,3,4}, 5));
+class Main {
+    public static void main(String[] main) {
+        System.out.println(new Solution().twoSum(new int[]{2, 3, 4}, 5));
     }
 }

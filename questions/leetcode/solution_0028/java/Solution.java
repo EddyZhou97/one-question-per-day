@@ -39,7 +39,7 @@ class Solution {
      * 通过动态转移数组获取下一个状态
      *
      * @param haystack 待匹配字符串
-     * @param dp 动态转移数组
+     * @param dp       动态转移数组
      * @return 匹配结果
      */
     public int search(String haystack, int[][] dp) {
