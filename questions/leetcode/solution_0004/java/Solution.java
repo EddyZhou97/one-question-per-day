@@ -5,18 +5,19 @@ class Solution {
         int count = 0;
         int length = nums1.length + nums2.length;
         boolean isEven = length % 2 == 0;
-        int half = (length + 1) / 2;
-        int[] nums = new int[half + 1];
+        int half = length / 2;
+        int[] nums = new int[half + 2];
         int firstIndex = 0;
         int secondIndex = 0;
         while(count <= half){
-        
-            if(firstIndex < nums1.length && secondIndex < nums2.length && nums1[firstIndex] < nums2[secondIndex]){
-                nums[count] = nums1[firstIndex];
-                firstIndex++;
-            }else if(firstIndex < nums1.length && secondIndex < nums2.length && nums1[firstIndex] >= nums2[secondIndex]) {
-                nums[count] = nums2[secondIndex];
-                secondIndex++;
+            if(firstIndex < nums1.length && secondIndex < nums2.length){
+                if(nums1[firstIndex] < nums2[secondIndex]){
+                    nums[count] = nums1[firstIndex];
+                    firstIndex++;
+                } else{
+                    nums[count] = nums2[secondIndex];
+                    secondIndex++;
+                }
             } else if(firstIndex < nums1.length){
                 nums[count] = nums1[firstIndex];
                 firstIndex++;
@@ -28,9 +29,9 @@ class Solution {
         }
 
         if(isEven){
-            return 1.0 * (nums[half-1] + nums[half])/2;
+            return 1.0 * (nums[half - 1] + nums[half])/2;
         }else{
-            return nums[half - 1] * 1.0;
+            return nums[half] * 1.0;
         }
     }
 
