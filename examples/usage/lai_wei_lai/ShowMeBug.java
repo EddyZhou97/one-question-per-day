@@ -33,20 +33,20 @@ public class ShowMeBug {
 
     /**
      * AA
-     * BB
-     * FF
-     * GG
-     * CC
-     * DD
-     * HH
-     * EE
-     * II
+     *   BB
+     *     FF
+     *     GG
+     *   CC
+     *     DD
+     *       HH
+     *     EE
+     *       II
      * JJ
-     * KK
-     * LL
-     * MM
-     * NN
-     * OO
+     *   KK
+     *   LL
+     *     MM
+     *       NN
+     *         OO
      */
     public static void main(String[] args) {
         List<Node> nodeList = Arrays.asList(
