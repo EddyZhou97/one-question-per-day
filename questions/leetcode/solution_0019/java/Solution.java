@@ -41,7 +41,6 @@ class Solution {
             count ++;
             fast = fast.next;
         }
-        System.out.println(count);
         if (slow.next != null) {
             if (slow == head && n != count) {
                 head = head.next;
