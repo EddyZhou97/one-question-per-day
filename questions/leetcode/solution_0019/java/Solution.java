@@ -31,26 +31,25 @@ class ListNode {
 class Solution {
     public ListNode removeNthFromEnd(ListNode head, int n) {
 
-        ListNode fast = head;
-        ListNode slow = head;
-        int count = 0;
-        while (fast.next != null) {
-            if (count >= n) {
-                slow = slow.next;
-            }
-            count ++;
+        ListNode preHead = new ListNode(0);
+        preHead.next = head;
+
+        ListNode fast = preHead;
+        ListNode slow = preHead;
+
+        for (int i = 0; i <= n; i++) {
             fast = fast.next;
         }
-        if (slow.next != null) {
-            if (slow == head && n != count) {
-                head = head.next;
-            } else {
-                slow.next = slow.next.next;
-            }
-        } else {
-            head = null;
+
+        while (fast != null) {
+            fast = fast.next;
+            slow = slow.next;
         }
-        return head;
+
+        ListNode needDelNode = slow.next;
+        slow.next = needDelNode.next;
+        needDelNode.next = null;
+        return preHead.next;
     }
 
     public static void main(String[] args) {
