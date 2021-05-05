@@ -97,6 +97,7 @@ public class ShowMeBug {
 
     public static String getBlank(int count) {
         if (count > 0) {
+            // jkd 11
             return " ".repeat(count);
         }
         return "";
