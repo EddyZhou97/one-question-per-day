@@ -1,7 +1,9 @@
 package solution_0003.java;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * @author ZhouYi
@@ -9,7 +11,7 @@ import java.util.List;
  */
 public class Solution {
 
-    public int lengthOfLongestSubstring(String s) {
+    public int lengthOfLongestSubstringUseList(String s) {
         List<Character> subStr = new ArrayList<>();
         int size = 0;
         for (int i = 0; i < s.length(); i++) {
@@ -24,6 +26,22 @@ public class Solution {
         }
         if (size < subStr.size()) {
             size = subStr.size();
+        }
+        return size;
+    }
+
+    public int lengthOfLongestSubstring(String s) {
+        Set<Character> subStr = new HashSet<>();
+        int n = s.length(), kn = -1, size = 0;
+        for (int i = 0; i < n; i++) {
+            if (i != 0) {
+                subStr.remove(s.charAt(i - 1));
+            }
+            while (kn + 1 < n && !subStr.contains(s.charAt(kn + 1))) {
+                subStr.add(s.charAt(kn + 1));
+                kn++;
+            }
+            size = Math.max(size, kn - i + 1);
         }
         return size;
     }
