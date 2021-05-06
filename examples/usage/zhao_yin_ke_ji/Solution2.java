@@ -63,8 +63,8 @@ public class Solution2 {
         System.out.println("================================");
         System.out.println(new Solution2().getMaxValue(new int[]{1, 3, 5, 2, 4}, new int[]{1, 2, 3, 4, 5}));
         System.out.println("================================");
-
-
+        System.out.println(new Solution2().getMaxValue(new int[]{1}, new int[]{1}));
+        System.out.println("================================");
     }
 
 
