@@ -2,7 +2,7 @@ package solution_0014.java;
 
 public class Solution {
 
-    public String longestCommonPrefix(String[] strs) {
+    public String longestCommonPrefix2(String[] strs) {
 
         String commonStr = "";
         if (strs.length > 0) {
@@ -22,6 +22,35 @@ public class Solution {
         }
         return commonStr;
 
+    }
+
+    public String longestCommonPrefix(String[] strs){
+        if(strs.length == 0){
+            return "";
+        }
+        int index = 0;
+        StringBuilder res = new StringBuilder();
+        boolean continueFlag = true;
+        while (continueFlag) {
+            if(index > strs[0].length() -1){
+                return res.toString();
+            }
+            final char c = strs[0].charAt(index);
+            for (int i = 1; i < strs.length; i++) {
+                if ("".equals(strs[i])) {
+                    return "";
+                }
+                if (c != strs[i].charAt(index)) {
+                    return res.toString();
+                }
+                if (strs[i].length() - 1 == index) {
+                    continueFlag = false;
+                }
+            }
+            index++;
+            res.append(c);
+        }
+        return res.toString();
     }
 
     public static void main(String[] args) {
