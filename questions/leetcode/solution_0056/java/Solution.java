@@ -2,6 +2,7 @@ package solution_0056.java;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -14,15 +15,12 @@ public class Solution {
 
     public int[][] merge(int[][] intervals) {
 
-        for (int i = 0; i < intervals.length; i++) {
-            for (int j = i + 1; j < intervals.length; j++) {
-                if (intervals[i][0] > intervals[j][0]) {
-                    int[] tmp = intervals[i];
-                    intervals[i] = intervals[j];
-                    intervals[j] = tmp;
-                }
+        Arrays.sort(intervals, new Comparator<int[]>() {
+            @Override
+            public int compare(int[] interval1, int[] interval2) {
+                return interval1[0] - interval2[0];
             }
-        }
+        });
 
         List<int[]> res = new ArrayList<>();
         int begin = intervals[0][0];
