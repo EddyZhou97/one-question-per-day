@@ -1,9 +1,6 @@
 package solution_0056.java;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 /**
  * 56. 合并区间
@@ -13,7 +10,40 @@ import java.util.List;
  */
 public class Solution {
 
+    /**
+     * 使用位图实现
+     *
+     * @param intervals
+     * @return
+     */
     public int[][] merge(int[][] intervals) {
+        BitSet bitSet = new BitSet();
+        int max = 0;
+        for (int[] interval : intervals) {
+            int temp = interval[1] * 2 + 1;
+            bitSet.set(interval[0] * 2, temp, true);
+            max = temp >= max ? temp : max;
+        }
+
+        int index = 0, count = 0;
+        while (index < max) {
+            int start = bitSet.nextSetBit(index);
+            int end = bitSet.nextClearBit(start);
+
+            int[] item = {start / 2, (end - 1) / 2};
+            intervals[count++] = item;
+
+            index = end;
+        }
+        int[][] ret = new int[count][2];
+        for (int i = 0; i < count; i++) {
+            ret[i] = intervals[i];
+        }
+
+        return ret;
+    }
+
+    public int[][] mergeBak(int[][] intervals) {
 
         Arrays.sort(intervals, new Comparator<int[]>() {
             @Override
