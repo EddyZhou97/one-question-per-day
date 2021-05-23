@@ -24,7 +24,7 @@ public class Solution {
 
     }
 
-    public String longestCommonPrefix(String[] strs){
+    public String longestCommonPrefix1(String[] strs){
         if(strs.length == 0){
             return "";
         }
@@ -51,6 +51,23 @@ public class Solution {
             res.append(c);
         }
         return res.toString();
+    }
+
+    public String longestCommonPrefix(String[] strs){
+
+        if(strs.length == 0){
+            return "";
+        }
+        String subStr = strs[0];
+        for(String str : strs){
+            while(!str.startsWith(subStr)){
+                if(subStr.length() == 0){
+                    return "";
+                }
+                subStr = subStr.substring(0, subStr.length() - 1);
+            }
+        }
+        return subStr;
     }
 
     public static void main(String[] args) {
