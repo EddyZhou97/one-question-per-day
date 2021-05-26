@@ -1,13 +1,22 @@
 package string_demo;
 
+import java.util.Arrays;
+
 public class StringDemo {
 
     public static void main(String[] args) {
-        internTest1();
-        System.out.println("================================================");
-        internTest2();
-        System.out.println("================================================");
-        internTest3();
+        splitMethod();
+//        internTest1();
+//        System.out.println("================================================");
+//        internTest2();
+//        System.out.println("================================================");
+//        internTest3();
+    }
+
+    public static void splitMethod(){
+        String content = "ddfsdf dfdsfs    sdfsf sdf";
+        final String[] split = content.split("\\s+");
+        System.out.println(Arrays.toString(split));
     }
 
     public static void internTest1() {

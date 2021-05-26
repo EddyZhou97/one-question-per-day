@@ -66,6 +66,13 @@ public class Solution {
 
     }
 
+    /**
+     * 时间复杂度：O(n*m + 2(m + n))
+     * 空间复杂度：O(m + n)
+     * @param num1
+     * @param num2
+     * @return
+     */
     public String multiply(String num1, String num2){
         if("0".equals(num1) || "0".equals(num2)){
             return "0";
