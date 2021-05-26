@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class Solution {
 
-    public String multiply(String num1, String num2) {
+    public String multiplyBak(String num1, String num2) {
         char[] up;
         char[] down;
         if (num1.length() >= num2.length()) {
@@ -66,7 +66,34 @@ public class Solution {
 
     }
 
+    public String multiply(String num1, String num2){
+        if("0".equals(num1) || "0".equals(num2)){
+            return "0";
+        }
+        int[] res = new int[num1.length() + num2.length()];
+        int n = num1.length(), m = num2.length();
+        for(int i = n - 1; i > -1; i--){
+            int multiply1 = num1.charAt(i) - '0';
+            for(int j = m - 1; j > -1; j--){
+                res[i + j + 1] += multiply1 * (num2.charAt(j) - '0');
+            }
+        }
+
+        for(int i = res.length - 1; i > 0 ; i--){
+            res[i - 1] += res[i] / 10;
+            res[i] = res[i] % 10;
+        }
+
+        int index = res[0] == 0 ? 1 : 0;
+        StringBuilder sb = new StringBuilder();
+        for(;index < res.length; index ++){
+            sb.append(res[index]);
+        }
+        return sb.toString();
+    }
+
     public static void main(String[] args) {
+        cases("9899", "0", "0");
         cases("123", "456", "56088");
         cases("2", "3", "6");
     }
