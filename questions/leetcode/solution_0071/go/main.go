@@ -2,8 +2,14 @@ package main
 
 import (
 	"fmt"
+	"path/filepath"
 	"strings"
 )
+
+// 平平无奇的API选手
+func simplifyPathApi(path string) string {
+	return filepath.Clean(path)
+}
 
 func simplifyPath(path string) string {
 	splitPath := strings.Split(path, "/")
