@@ -54,7 +54,7 @@ public class Solution {
     public static void cases(String path, String simplifyPath){
 
         final String simplifiedPath = new Solution().simplifyPath(path);
-        System.out.println("ans: " + simplifiedPath + " --- expected ans: " + simplifyPath);
+        System.out.println("ans: " + simplifiedPath + "\nexpected ans: " + simplifyPath);
         if(simplifiedPath.equals(simplifyPath)){
             System.out.println("AC");
         } else {
