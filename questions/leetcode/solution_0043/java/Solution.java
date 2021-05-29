@@ -67,7 +67,7 @@ public class Solution {
     }
 
     /**
-     * 时间复杂度：O(n*m + 2(m + n))
+     * 时间复杂度：O(n*m)
      * 空间复杂度：O(m + n)
      * @param num1
      * @param num2
