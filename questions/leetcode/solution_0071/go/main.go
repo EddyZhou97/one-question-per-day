@@ -11,6 +11,7 @@ func simplifyPathApi(path string) string {
 	return filepath.Clean(path)
 }
 
+// stack
 func simplifyPath(path string) string {
 	splitPath := strings.Split(path, "/")
 	stack := make([]string, 0)
