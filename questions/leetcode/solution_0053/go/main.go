@@ -28,4 +28,5 @@ func main() {
 	cases([]int{0, 1}, 1)
 	cases([]int{-2, 1, 3, 4}, 8)
 	cases([]int{-3, 2, -2, 7, -1}, 7)
+	cases([]int{-3, 2, -1, 7, -1}, 8)
 }
