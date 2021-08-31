@@ -9,3 +9,5 @@ one question per day
 - 使用多语言(go/java/python)实现，增加各语言的熟练度
 
 - 在完成之后添加求解分析
+
+20210831 漏写一题
