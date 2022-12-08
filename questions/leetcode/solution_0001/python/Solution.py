@@ -17,7 +17,18 @@ class Solution:
             num_dict[num] = i
         return []
 
+    def checkDuplicated(self, inputStr: str) -> bool:
+        values: List[str] = str.split(inputStr, ',')
+        str_dict: Dict[str, int] = dict()
+        for v in values:
+            if v in str_dict:
+                return True
+            str_dict[v] = 1
+        return False
+
+
 
 if __name__ == '__main__':
     solution = Solution()
     print(solution.twoSum([2, 7, 11, 15], 9))
+    print(solution.checkDuplicated("1,2,3,4"))

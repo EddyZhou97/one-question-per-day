@@ -22,6 +22,44 @@ class ListNode {
 }
 
 class Solution {
+
+    public static void main(String[] args) {
+        ListNode l1 = new ListNode(1, new ListNode(2, new ListNode(4)));
+        ListNode l2 = new ListNode(1, new ListNode(3, new ListNode(4)));
+
+        ListNode listNode = new Solution().solution1(l1, l2);
+        while (listNode != null) {
+            System.out.print(listNode.val + ",");
+            listNode = listNode.next;
+        }
+    }
+
+    public ListNode solution1(ListNode l1, ListNode l2) {
+        ListNode dummyNode = new ListNode(-1), p = dummyNode;
+
+        while (l1 != null && l2 != null) {
+            if (l1.val < l2.val) {
+                p.next = l1;
+                l1 = l1.next;
+            } else {
+                p.next = l2;
+                l2 = l2.next;
+            }
+            p = p.next;
+        }
+
+        if (l1 != null) {
+            p.next = l1;
+        }
+        if (l2 != null) {
+            p.next = l2;
+        }
+
+
+        return dummyNode.next;
+
+    }
+
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         if (l1 == null && l2 == null) {
             return null;
@@ -52,3 +90,4 @@ class Solution {
         return dummyNode.next;
     }
 }
+

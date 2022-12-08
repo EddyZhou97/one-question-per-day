@@ -46,6 +46,27 @@ public class Solution {
         return size;
     }
 
+    /**
+     * 执行用时：8ms
+     * 内存消耗：41.8MB
+     */
+    public int solution1(String s) {
+        int max = 0;
+        StringBuilder sw = new StringBuilder();
+        int length = s.length();
+        for (int i = 0; i < length; i++) {
+            max = Math.max(max, sw.length());
+            String tmpS = s.substring(i, i + 1);
+            int index = sw.indexOf(tmpS);
+            if (index >= 0) {
+                sw = new StringBuilder(sw.substring(index + 1));
+            }
+            sw.append(tmpS);
+        }
+        max = Math.max(max, sw.length());
+        return max;
+    }
+
     public static void main(String[] args) {
         cases("abcabcbb", 3);
         cases("bbbbb", 1);
@@ -56,7 +77,8 @@ public class Solution {
     }
 
     public static void cases(String s, int result) {
-        final int res = new Solution().lengthOfLongestSubstring(s);
+        //final int res = new Solution().lengthOfLongestSubstring(s);
+        final int res = new Solution().solution1(s);
         System.out.println("ans:" + res);
         if (res == result) {
             System.out.println("true");
