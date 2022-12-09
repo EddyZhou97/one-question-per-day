@@ -17,12 +17,10 @@ func partition(head *ListNode, x int) *ListNode {
             gp.Next = head
             gp = gp.Next
         }
-        tmpNode := head.Next
-        head.Next = nil
-        head = tmpNode
+        head = head.Next
     }
     lp.Next = gDummy.Next
-
+    gp.Next = nil
     return lDummy.Next
 
 }
