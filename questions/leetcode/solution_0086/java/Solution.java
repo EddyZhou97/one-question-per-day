@@ -45,13 +45,16 @@ public class Solution {
 
         while(head != null){
             if (head.val < x) {
-                lp.next = new ListNode(head.val);
+                lp.next = head;
                 lp = lp.next;
             } else {
-                gp.next = new ListNode(head.val);
+                gp.next = head;
                 gp = gp.next;
             }
-            head = head.next;
+            // 断开原链上每个节点的next指针，防止出现某个链一直连续问题
+            ListNode tmpNode = head.next;
+            head.next = null;
+            head = tmpNode;
         }
         lp.next = greatDummy.next;
         return lessDummy.next;
