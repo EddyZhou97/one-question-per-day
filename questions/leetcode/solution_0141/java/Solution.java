@@ -1,20 +1,10 @@
 package solution_0141.java;
 
-/**
- * Definition for singly-linked list.
- */
-class ListNode {
-    int val;
-    ListNode next;
-
-    ListNode(int x) {
-        val = x;
-        next = null;
-    }
-}
+import common.j.ListNode;
 
 public class Solution {
-    public boolean hasCycle(ListNode head) {
+
+    public boolean solution1(ListNode head) {
         ListNode flagNode = new ListNode(0);
         while (head != null && head.next != null) {
             if (head.next == flagNode) {
@@ -26,4 +16,19 @@ public class Solution {
         }
         return false;
     }
+
+    public boolean hasCycle(ListNode head) {
+
+        ListNode fast = head;
+        ListNode slow = head;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+            if (fast == slow) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }

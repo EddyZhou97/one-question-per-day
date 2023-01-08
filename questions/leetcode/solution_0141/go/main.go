@@ -1,12 +1,6 @@
 package main
 
-/**
- * Definition for singly-linked list.
- */
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
+import . "one-question-per-day-golang/questions/leetcode/common/g"
 
 func hasCycle(head *ListNode) bool {
 	if head == nil {
