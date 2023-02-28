@@ -7,7 +7,7 @@ package solution_0005.java;
  * 2021/5/9 11:21 下午
  */
 public class Solution {
-    public String longestPalindrome(String s) {
+    public String solution1(String s) {
         int begin = 0;
         int maxLen = 1;
         int length = s.length();
@@ -47,6 +47,28 @@ public class Solution {
             }
         }
         return s.substring(begin, begin + maxLen);
+    }
+
+    /**
+     * 回文
+     */
+    public String palindrome(String s, int l, int r) {
+        while (l >= 0 && r < s.length() && s.charAt(l) == s.charAt(r)) {
+                l--;
+                r++;
+        }
+        return s.substring(l + 1, r);
+    }
+
+    public String longestPalindrome(String s) {
+        String res = "";
+        for (int i = 0; i < s.length(); i++) {
+            String s1 = palindrome(s, i, i);
+            String s2 = palindrome(s, i, i+1);
+            res = res.length() > s1.length() ? res : s1;
+            res = res.length() > s2.length() ? res : s2;
+        }
+        return res;
     }
 
     public static void main(String[] args) {
